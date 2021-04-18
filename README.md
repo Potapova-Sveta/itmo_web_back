@@ -3,6 +3,7 @@
 </p>
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
   <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
@@ -25,6 +26,19 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+Фреймворк NestJS был выбран за свою схожесть с Angular и поддержкой TS из коробки.
+
+NestJS предоставляет удобную интеграцию с typeorm. В качестве базы я использовала sqlite, чтобы не разворачивать
+полноценную базу. В директории entity находятся сущности, размеченные специальными директивами, которые "мапят" поля
+наших классов на колонки в таблице базы данных
+
+Далее был написаны сервисы — слой бизнес логики, взаимодействующий с базой данных. Там происходят различные проверки,
+изменения статусов задач, рагистрация новых пользователей и т.д.
+
+Последняя часть приложения — контроллеры. Они обрабатывают запросы. Контроллеры могут принимать входящие параметры в
+теле запроса, как PathParam или как QueryParam Контроллеры вызывают нужные им сервисы и, по результатам их работы,
+возвращают пользователю ответ на запрос.
 
 ## Installation
 
@@ -60,7 +74,8 @@ $ npm run test:cov
 
 ## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If
+you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
